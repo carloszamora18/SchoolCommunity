@@ -1,0 +1,176 @@
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <script language="javascript" src="JS/index.js"></script>
+        <script language="javascript" src="JS/tooltip.js"></script>
+        <script language="javascript" src="JS/collapsemenu.js"></script>
+		<script type="text/javascript" src="javascript/jquery/jquery-1.7.js"></script>
+        <!--<script type="text/javascript" src="JS/DetectNav.js"></script>-->
+<link href="javascript/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<script language="javascript" src="javascript/jquery/jquery-1.7.js"></script>  
+<script language="javascript" src="javascript/bootstrap/js/bootstrap.js"></script>
+<script language="javascript">
+
+$(document).ready(function(){
+//	$("#mensaje").modal("show");
+});	
+/***********************************************/
+/* AJAX, función para crear el objecto XMLHTTP */
+/***********************************************/
+function creaAjax(){
+         var objetoAjax=false;
+         try {
+          /*Para navegadores distintos a internet explorer*/
+          objetoAjax = new ActiveXObject("Msxml2.XMLHTTP");
+         } catch (e) {
+          try {
+                   /*Para explorer*/
+                   objetoAjax = new ActiveXObject("Microsoft.XMLHTTP");
+                   }
+                   catch (E) {
+                   objetoAjax = false;
+          }
+         }
+
+         if (!objetoAjax && typeof XMLHttpRequest!='undefined') {
+          objetoAjax = new XMLHttpRequest();
+         }
+         return objetoAjax;
+}
+
+function CambiaForm(_DivContenedor,_op)
+{
+	//creamos el objeto     
+	ajax=creaAjax();   
+	//cargamos una varible con las variables que vamos a enviar    
+	
+	values_send="op="+_op;     
+	URL="funciones/funciones_login.php?";
+	
+	ajax.open("GET",URL+"&"+values_send,true);         
+	//una vez enviado los valores inmediatamente llamamos a la propiedad         //onreadystatechange	
+	ajax.onreadystatechange=function() 
+	{
+		//dentro de la funcion comprobamos el estado del proceso                 //si es 4 (terminado) pedimos lo que nos han mandado
+		if (ajax.readyState==1)
+		{
+			document.getElementById(_DivContenedor).innerHTML="<img src=\"images/cargando2.gif\" width=\"200\" height=\"30\" />";
+		}
+		if (ajax.readyState==4)        
+		{
+			//usamos la propiedad responseText para recibir en una cadena                 //lo que nos mandaron 
+			document.getElementById(_DivContenedor).innerHTML=ajax.responseText;
+		    
+		}
+	}
+	
+ 
+	ajax.send(null); 
+} 
+</script>	
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script language="javascript">
+        var login = true;
+        function unload(idppal)
+        {
+                if(idppal != 0 && login)
+                {
+                        day = new Date();
+                        id = day.getTime();
+                        eval("page" + id + " = window.open('popup.php?modulo=unload&id='+idppal, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=100,height=1');");
+                        window.focus();
+                }
+        }
+        </script>
+        <title>Sistema de Control Escolar</title>
+        
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<link href="css/menu.css" rel="stylesheet" type="text/css" />
+<link href="css/tabla.css" rel="stylesheet" type="text/css">
+<link href="css/login.css" rel="stylesheet" type="text/css">
+<link href="css/noticias.css" rel="stylesheet" type="text/css">
+        </head>
+                  <body>
+        <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="113" colspan="2" align="left" valign="bottom" >
+
+            <table width="100%" height="113" border="0" cellpadding="0" cellspacing="0" background="img/logobg.jpg">
+              <tr>
+                <td width="30%" rowspan="2" align="left" valign="bottom" class="logo">&nbsp;</td>
+                <td width="39%" align="left" valign="bottom">
+                        </td>
+                <td width="31%" rowspan="2" align="right" valign="bottom" class="logoek">
+
+
+                                       </td>
+              </tr>
+              <tr>
+                <td align="left" valign="bottom">
+                        </td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td width="109"  align="left" valign="top" nowrap><div>
+                    </div></td>
+            <td width="1105" align="left" valign="top" class="Cuerpo"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><div>
+                  <div class="modal hide fade" id="mensaje">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Comunicado Urgente</h3>
+  </div>
+  <div class="modal-body">
+    <p align="center" class="style1">Se les informa que apartir del día Miércoles 19 de Noviembre a las 10pm al día Jueves 20 de Noviembre a las 9am, se suspenderá el servicio del servidor, ya que nuestro proveedor realizará mantenimiento.</p>
+    <p align="center" class="style1">Se ruega tomar precauciones sobre este asunto.</p>
+    <p align="center" class="style3">Atentamente</p>
+    <p align="center" class="style2">Special Compu  </p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</a>
+  </div>
+</div>
+<table width="100%" height="600" border="0"  cellspacing="0">
+  <tr>
+    <td align="center" valign="top">
+	
+	<table width="350" border="0" cellpadding="50" cellspacing="0" >
+      <tr>
+        <td width="498">
+		<form id="Form_Login" name="Form_Login" method="post" action="" class="LoginForm">
+		<div id="Login">
+		<fieldset>
+		 <p></p>
+		 <p><label for="txtuser" accesskey="u">: Usuario :</label></p>
+		 <p><input name="txtuser" type="text" id="txtuser" size="45" />
+		 </p>
+         <p><label for="txtpass" accesskey="c">: Contrase&ntilde;a :</label></p>
+		 <p><input name="txtpass" type="password" id="txtpass" size="45" />
+		 </p>
+         <p><input name="btn_Login" type="submit" class="button" id="btn_Login" value="Ingresar" />
+         </p>
+		 </fieldset>	 
+		 </div>
+		 <span class="msgerror">Error, usuario y/o contrase&ntilde;a incorrecta.</span>         </form>		 
+        </td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+  <!--<tr>
+	<div><label><font color="red" size="3">Si su navegador le bloquea el acceso al Sistema,deber&aacute; volver a una versi&oacute;n anterior de Mozilla Firefox, para ello descargue el siguiente archivo <a href="Manuales/Firefox Setup 50.1.0.exe">Descargar</a> y siga las siguientes instrucciones <a href="Manuales/InstruccionesMozilla.pdf" target="_blank">Instrucciones</a></font></label></div>
+  </tr>-->
+</table>
+
+<div>
+
+</div>
+                </div></td>
+                </tr>
+            </table></td>
+          </tr>
+        </table>
+        </body>
+        </html>

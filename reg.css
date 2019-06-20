@@ -1,0 +1,97 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	background-image:url(fondi.jpeg);
+	font-family:sans-serif;
+	background:#204862;
+}
+h1{
+	color:#58ACFA;
+	
+	position:relative;
+	text-align: center;
+	
+}
+
+.form-register{
+	width: 95%;
+	max-width: 500px;
+	margin: auto;
+	background: white;
+    border-radius:7px;	
+	position:relative;
+	background:rgba(0,0,0,0);
+}
+h2{
+	background:rgba(0,0,0,0);
+	color:#01DFA5;
+	pading:20px;
+	text-align:center;
+	font-weight:100;
+	font-size:30px;
+	border-top-left-radius:7px;
+	border-top-right-radius:7;
+	border-bottom:5px solid crimson;
+}
+.contenedor-inputs{
+	padding:10px 30px;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	
+}
+input{
+	margin-bottom: 15px;
+	padding: 15px;
+	font-size: 16px;
+	border-radius: 3px;
+	border:1px solid darkgray;
+}
+.input-48{
+	width:48%;
+}
+.input-100{
+	width:100%;
+}
+.btn-enviar{
+	background: crimson;
+	color:#fff;
+	margin:auto;
+	padding:10px 40px;
+	cursor:pointer;
+	
+	
+}
+.btn-enviar:active{
+	transform:scale(1.5);
+	
+}
+.form_link{
+	width:100%;
+ margin: 7px;
+ text-align:center;
+ font-size:14px;
+}
+p.form_link{
+	color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

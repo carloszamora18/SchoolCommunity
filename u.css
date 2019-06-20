@@ -1,0 +1,54 @@
+/*CODIGO PARA LOS BOTONES*/
+.button{
+    font:15px Calibri, Arial, sans-serif;
+
+    /*Configuraciones de la posicion de los botones*/
+    text-decoration:none !important;
+    cursor:pointer;
+    padding:10px 20px;
+    white-space:nowrap;
+    position: relative;
+
+    /* Sombra en el texto */
+    text-shadow:1px 1px 0 rgba(0,0,0,0.4);
+
+
+    /* Para los navegadores que no soportan multiples fondos */
+    background-position:bottom left;
+    background-image:url('boton.png');
+
+
+    /* Fondos multiples */
+    background-position:bottom left, top right, 0 0, 0 0;
+    background-clip:border-box;
+
+
+    /* bordes redondeados*/
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+
+
+    /* sombra en los div */
+    -moz-box-shadow:0 0 1px #fff inset;
+    -webkit-box-shadow:0 0 1px #fff inset;
+    box-shadow:0 0 1px #fff inset;
+
+
+    /* propiedad transition */
+    -webkit-transition:background-position 1s;
+    -moz-transition:background-position 1s;
+    transition:background-position 1s;
+}
+
+.button:hover{
+
+    /* Al pasar el ratón encima del boton, activara el efecto hover y hará que la posicion del fondo cambie*/
+    background-position:top left;
+    background-position:top left, bottom right, 0 0, 0 0;
+}
+
+.button:active{
+    /* Moverá el boton 1px al cliclearlo*/
+    bottom:-2px;
+}

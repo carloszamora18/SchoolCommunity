@@ -1,0 +1,84 @@
+.social-bar {
+
+  position: fixed;
+
+  right: 0;
+
+  top: 25%;
+
+  font-size: 1.5rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  z-index: 100;
+
+}
+
+
+.icon {
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: .7rem;
+
+  display: flex;
+
+  transition: all .5s;
+
+}
+
+.icon-facebook{
+background:#0000FF;
+}
+   .icon-twitter{
+    background: #00BFFF;
+   }
+    .icon-youtube{
+     background:#FF0040; 
+    }
+    .icon-instagram{
+background: #FA5882;
+    }
+
+     .icon-mail2{
+background: #610B21;
+     }
+    .icon-whatsapp{
+background: #01DF01;
+    }
+
+   .icon-image{
+    background: #2E2E2E; 
+
+    }
+
+
+.icon:first-child {
+
+  border-radius: 1rem 0 0 0;
+
+}
+
+
+.icon:last-child {
+
+  border-radius: 0 0 0 1rem;
+
+}
+
+
+.icon:hover {
+
+  padding-right: 3rem;
+
+  border-radius: 1rem 0 0 1rem;
+
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+
+}

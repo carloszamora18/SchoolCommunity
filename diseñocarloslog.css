@@ -1,0 +1,22 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.contenido{
+position:relative;
+left:0;
+top:200px;
+z-index:2000;
+}
+.social li a{
+	color:white;
+	font-size:25px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	padding:10px;
+	display:inline-block;
+	
+}
+.facebook{background-color; #222283;}
